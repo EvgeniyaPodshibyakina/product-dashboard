@@ -1,0 +1,30 @@
+.generate-report-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1976d2; /* Синий цвет фона */
+  color: #fff; /* Белый цвет текста */
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Тень */
+  border-radius: 8px; /* Скругленные углы */
+  padding: 16px; /* Внутренний отступ */
+  height: 100px; /* Высота блока аналогичная "Current Inventory" */
+  width: 100%; /* Ширина блока */
+}
+
+.generate-report-button {
+  width: 100%;
+  height: 100%;
+  background-color: transparent; /* Прозрачный фон, чтобы виден был синий фон контейнера */
+  border: none; /* Убираем границу */
+  color: #fff; /* Белый цвет текста */
+  font-size: 1.5em; /* Увеличенный размер текста */
+  text-align: center;
+  cursor: pointer; /* Курсор в виде руки при наведении */
+  padding: 0;
+  text-transform: none; /* Оставляем текст как есть */
+  outline: none; /* Убираем стандартный outline */
+  
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Легкий эффект при наведении */
+  }
+}

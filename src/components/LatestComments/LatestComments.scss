@@ -1,0 +1,34 @@
+.LatestComments {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  line-height: 1.5;
+
+  .comments-title {
+    text-align: center;
+    color: #000;
+  }
+
+  .comments-columns {
+    display: flex;
+    justify-content: space-evenly; 
+    width: 100%;
+    margin:1em;
+  }
+
+  .MuiListItemText-primary {
+    font-size: 1.2rem;
+  }
+
+  .MuiListItemText-secondary {
+    font-size: 1.2rem;
+  }
+
+  .MuiListItem-root {
+    padding: 10px 0;
+  }
+}

@@ -1,0 +1,31 @@
+.current-inventory-container {
+  background-color: #fff; /* Белый фон */
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Тень */
+  border-radius: 8px; /* Скругленные углы */
+  padding: 16px; /* Внутренний отступ */
+  text-align: center; /* Центрирование текста */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px; /* Высота блока аналогичная "Generate Report" */
+  width: 100%; /* Ширина блока */
+}
+
+.current-inventory-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.current-inventory-title {
+  font-size: 1.5em; /* Размер текста заголовка */
+  color: #333; /* Темный цвет текста для заголовка */
+  margin-bottom: 8px; /* Отступ снизу */
+}
+
+.current-inventory-count {
+  font-size: 2.5em; /* Крупный шрифт для отображения количества */
+  font-weight: bold; /* Жирный шрифт */
+  color: #1976d2; /* Синий цвет для числа */
+}
