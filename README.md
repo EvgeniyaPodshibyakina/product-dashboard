@@ -65,8 +65,9 @@ The application will be available at `http://localhost:5174`.
 
 - **API Integration**: Integrate with a real API to fetch product data dynamically.
 - **Enhanced Reporting**: Expand the reporting functionality to include more file formats and customizable report content.
+- **Responsive Design**: Add media queries for mobile device sizes
   
-  ### In case of scaling the project 
+### In case of scaling the project 
 
 - **Performance Optimization**: Continue to optimize the performance, especially for large datasets.
 - **Styles Optimization**: Add variables for colors.
