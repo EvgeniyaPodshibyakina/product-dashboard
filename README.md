@@ -36,6 +36,10 @@ This project was made with Vite
 
 1. Clone the repository
 
+   ```sh
+     git clone https://github.com/your-username/product-dashboard.git
+     cd product-dashboard
+   ```
 2. Install the dependencies:
 
    ```sh
@@ -60,6 +64,7 @@ The application will be available at `http://localhost:5174`.
 - **Reusable Components**: Line chart had to be generic because there are 3 charts that are almost identical.
 - **State Management**: Handling state between different components, especially for data filtering and the product selector, required careful planning.
   But in the same category of State management I think using state managers (as Redux) would have been over-engineering at this point.
+- **Tests**: Add testing
 
 ### Future Improvements
 
