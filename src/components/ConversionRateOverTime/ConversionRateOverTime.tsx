@@ -11,7 +11,7 @@ const ConversionRateOverTime: React.FC<ConversionRateOverTimeProps> = ({
       conversionRate: dataPoint.conversionRate * 100,
     };
   });
-  const formatPercent = (value: number) => `${value}%`;
+  const formatPercent = (value: number) => `${value.toFixed(0)}%`;
   return (
     <div className="chart-wrapper">
       <LineChartWithToggle
