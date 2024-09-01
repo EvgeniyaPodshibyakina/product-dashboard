@@ -21,15 +21,45 @@
   .toggle-button {
     transition: background-color 0.3s ease, color 0.3s ease;
     color: #093a6b;
+    padding: 0.5em 1em; /* Default padding */
+    font-size: 1rem; /* Default font size */
+    
+    &:hover {
+      background-color: rgba(25, 118, 210, 0.1);
+      color: #1976d2;
+    }
   }
 
   .toggle-button.Mui-selected {
-    background-color: #0c1ec1 !important; /* Замените на нужный цвет */
+    background-color: #0c1ec1 !important; /* Selected button background color */
     color: #fff !important;
   }
 
-  .toggle-button:hover {
-    background-color: rgba(25, 118, 210, 0.1);
-    color: #1976d2;
+  @media (max-width: 1200px) {
+    .toggle-button {
+      font-size: 0.9rem;
+      padding: 0.4em 0.9em;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .toggle-button {
+      font-size: 0.8rem;
+      padding: 0.3em 0.8em;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .toggle-button {
+      font-size: 0.7rem;
+      padding: 0.2em 0.7em;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .toggle-button {
+      font-size: 0.6rem;
+      padding: 0.1em 0.6em;
+    }
   }
 }
