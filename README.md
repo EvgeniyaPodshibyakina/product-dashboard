@@ -36,6 +36,10 @@ This project was made with Vite
 
 1. Clone the repository
 
+   ```sh
+     git clone https://github.com/your-username/product-dashboard.git
+     cd product-dashboard
+   ```
 2. Install the dependencies:
 
    ```sh
