@@ -1,15 +1,12 @@
-import './App.scss'
-import Dashboard from './sections/ProductDashboard/ProductDashboard'
-
+import "./App.scss";
+import ProductDashboard from "./sections/ProductDashboard/ProductDashboard";
 
 function App() {
-
-
   return (
-    <>
-  <Dashboard/>
-   </>
-  )
+    <div className="App">
+      <ProductDashboard />
+    </div>
+  );
 }
 
-export default App
+export default App;

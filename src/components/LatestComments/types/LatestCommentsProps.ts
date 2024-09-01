@@ -1,5 +1,5 @@
-import { Comment } from "../../../mockData/types";
+import { CommentData } from "../../../mockData/types";
 
 export interface LatestCommentsProps {
-    comments: Comment[];
-  }
+  comments: CommentData[];
+}

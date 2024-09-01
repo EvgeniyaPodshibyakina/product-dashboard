@@ -1,4 +1,3 @@
-// src/components/ProductDashboard/ProductDashboard.tsx
 import React, { useState } from "react";
 import ProductSelector from "../../components/ProductSelector/ProductSelector";
 import ProductDataDisplay from "../../components/ProductDataDisplay/ProductDataDisplay";
@@ -24,15 +23,18 @@ import {
   dressComments,
   dressInventory,
 } from "../../mockData";
-import "./ProductDashboard.scss"; // Стили для компонента ProductDashboard
+import "./ProductDashboard.scss";
 
+// List of available products
 const products = ["Sweater", "Jacket", "Jeans", "Dress"];
 
 const ProductDashboard: React.FC = () => {
+  // State to track the currently selected product
   const [selectedProduct, setSelectedProduct] = useState<string>("Sweater");
 
+  // Function to handle changes in product selection
   const handleProductChange = (
-    event: React.SyntheticEvent,
+    _event: React.SyntheticEvent,
     value: string | null
   ) => {
     if (value) {
@@ -40,9 +42,10 @@ const ProductDashboard: React.FC = () => {
     }
   };
 
+  // Variables to hold data specific to the selected product
   let salesData, conversionData, reviewData, comments, inventoryCount;
 
-  // Обновление значений на основе выбранного продукта
+  // Switch statement to set the appropriate data based on the selected product
   switch (selectedProduct) {
     case "Jacket":
       salesData = jacketSalesData;
@@ -66,6 +69,7 @@ const ProductDashboard: React.FC = () => {
       inventoryCount = dressInventory;
       break;
     default:
+      // Default to "Sweater" data if no product is selected or if "Sweater" is selected
       salesData = sweaterSalesData;
       conversionData = sweaterConversionData;
       reviewData = sweaterReviewData;
@@ -76,11 +80,14 @@ const ProductDashboard: React.FC = () => {
 
   return (
     <div className="ProductDashboard">
+      <h1>Product Dashboard</h1>
+      {/* Component for selecting a product */}
       <ProductSelector
         selectedProduct={selectedProduct}
         onProductChange={handleProductChange}
         options={products}
       />
+      {/* Component for displaying data related to the selected product */}
       <ProductDataDisplay
         salesData={salesData}
         conversionData={conversionData}

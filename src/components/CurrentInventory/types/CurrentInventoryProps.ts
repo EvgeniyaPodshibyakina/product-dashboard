@@ -1,4 +1,3 @@
 export interface CurrentInventoryProps {
-    inventoryCount: number;
-  }
-  
+  inventoryCount: number;
+}

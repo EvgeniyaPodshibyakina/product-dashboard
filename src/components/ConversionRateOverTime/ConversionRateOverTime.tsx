@@ -1,20 +1,28 @@
-import React from 'react';
-import { Typography } from '@mui/material';
-import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
-import { ConversionRateOverTimeProps } from './types/ConversionRateOverTimeProps';
+import React from "react";
+import LineChartWithToggle from "../LineChartWithToggle/LineChartWithToggle";
+import { ConversionRateOverTimeProps } from "./types/ConversionRateOverTimeProps";
 
-const ConversionRateOverTime: React.FC<ConversionRateOverTimeProps> = ({ data }) => {
+const ConversionRateOverTime: React.FC<ConversionRateOverTimeProps> = ({
+  data,
+}) => {
+  const formattedData = data.map((dataPoint) => {
+    return {
+      ...dataPoint,
+      conversionRate: dataPoint.conversionRate * 100,
+    };
+  });
+  const formatPercent = (value: number) => `${value}%`;
   return (
-    <div>
-      <h2>Conversion Rate Over Time</h2>
-      <ResponsiveContainer width={600} height={300}>
-        <LineChart data={data}>
-          <XAxis dataKey="month" />
-          <YAxis />
-          <Tooltip />
-          <Line type="monotone" dataKey="conversionRate" stroke="#dc004e" />
-        </LineChart>
-      </ResponsiveContainer>
+    <div className="chart-wrapper">
+      <LineChartWithToggle
+        title="Conversion Rate Over Time"
+        data={formattedData}
+        dataKey="conversionRate"
+        lineColor="#dc004e"
+        yAxisDomain={[0, 100]}
+        yAxisTicks={[0, 20, 40, 60, 80, 100]}
+        valueFormatter={formatPercent}
+      />
     </div>
   );
 };

@@ -1,3 +1,5 @@
+// Mock data for jeans product
+
 export const jeansSalesData = [
   { month: "Sep", sales: 3200 },
   { month: "Oct", sales: 2800 },

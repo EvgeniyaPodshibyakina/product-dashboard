@@ -1,0 +1,35 @@
+.line-chart-with-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1em;
+
+  .toggle-group-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+  }
+
+  .chart-wrapper {
+    width: 100%;
+    flex-grow: 1;
+  }
+
+  .toggle-button {
+    transition: background-color 0.3s ease, color 0.3s ease;
+    color: #093a6b;
+  }
+
+  .toggle-button.Mui-selected {
+    background-color: #0c1ec1 !important; /* Замените на нужный цвет */
+    color: #fff !important;
+  }
+
+  .toggle-button:hover {
+    background-color: rgba(25, 118, 210, 0.1);
+    color: #1976d2;
+  }
+}

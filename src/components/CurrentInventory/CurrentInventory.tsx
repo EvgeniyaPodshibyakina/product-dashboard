@@ -1,8 +1,10 @@
-import React from 'react';
-import './CurrentInventory.scss'; // Подключаем стили для компонента
-import { CurrentInventoryProps } from './types/CurrentInventoryProps';
+import React from "react";
+import "./CurrentInventory.scss"; // Подключаем стили для компонента
+import { CurrentInventoryProps } from "./types/CurrentInventoryProps";
 
-const CurrentInventory: React.FC<CurrentInventoryProps> = ({ inventoryCount }) => {
+const CurrentInventory: React.FC<CurrentInventoryProps> = ({
+  inventoryCount,
+}) => {
   return (
     <div className="current-inventory-container">
       <div className="current-inventory-content">

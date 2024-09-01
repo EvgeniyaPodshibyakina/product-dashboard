@@ -1,13 +1,8 @@
 .ProductDataDisplay {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr; // Три колонки: первая для Sales, вторая для комментариев, третья для кнопки и Current Inventory
-  grid-template-rows: 0.3fr 1fr 1fr; // Три строки для содержимого
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: 0.3fr 1fr 1fr;
   grid-gap: 3em;
-
-  .SalesOverTime {
-    grid-column: 1; // Первая колонка
-    grid-row: 2; // Занимает две строки
-  }
 
   .CurrentInventory {
     grid-column: 1; // Третья колонка
@@ -19,28 +14,33 @@
   }
 
   .ReportButton {
-    grid-column: 2; // Третья колонка
-    grid-row: 1; // Вторая строка
+    grid-column: 2; 
+    grid-row: 1; 
     display: flex;
     flex-direction: column;
     justify-content: flex-start; // Расположить сверху секции
     align-items: center;
   }
 
+  .SalesOverTime {
+    grid-column: 1;
+    grid-row: 2; // Занимает две строки
+  }
+
+
   .LatestComments {
-    grid-column: 2 / span 3;
+    grid-column: 2;
     grid-row: 2;
     display: flex;
     flex-direction: column;
   }
 
   .ConversionRate {
-    grid-column: 1; // Первая колонка
-    grid-row: 3; // Третья строка
+    grid-column: 1; // Третья строка
   }
 
   .ReviewTrend {
-    grid-column: 2 / span 3; // Занимает все три колонки
-    grid-row: 3; // Третья строка
+    grid-column: 2; 
+    grid-row: 3; 
   }
 }

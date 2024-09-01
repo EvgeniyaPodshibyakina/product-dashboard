@@ -1,31 +1,34 @@
 .LatestComments {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: stretch;
   font-size: 1.2rem;
   font-weight: bold;
-  color: #333;
+  color: #093a6b;
   line-height: 1.5;
 
   .comments-title {
     text-align: center;
-    color: #000;
+    color: #093a6b;
   }
-
+  .header {
+    margin: 1em 0 0 0;
+  }
   .comments-columns {
     display: flex;
-    justify-content: space-evenly; 
+    justify-content: space-evenly;
     width: 100%;
-    margin:1em;
+    margin: 1em;
   }
 
   .MuiListItemText-primary {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   .MuiListItemText-secondary {
     font-size: 1.2rem;
+    color: #093a6b;
   }
 
   .MuiListItem-root {

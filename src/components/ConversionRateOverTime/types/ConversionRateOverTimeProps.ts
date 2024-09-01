@@ -1,6 +1,5 @@
 import { ConversionData } from "../../../mockData/types";
 
-export  interface ConversionRateOverTimeProps {
-    data: ConversionData[];
-  }
-  
+export interface ConversionRateOverTimeProps {
+  data: ConversionData[];
+}
