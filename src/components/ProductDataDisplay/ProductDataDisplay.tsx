@@ -27,22 +27,22 @@ const ProductDataDisplay: React.FC<ProductDataDisplayProps> = ({
 
   return (
     <div className="ProductDataDisplay">
-      <div className="ReportButton">
+      <div className="report-button ">
         <GenerateReportButton reportData={reportData} />
       </div>
-      <div className="CurrentInventory">
+      <div className="current-inventory ">
         <CurrentInventory inventoryCount={inventoryCount} />
       </div>
-      <div className="SalesOverTime">
+      <div className="sales-over-time ">
         <SalesOverTime data={salesData} />
       </div>
-      <div className="ConversionRate">
+      <div className="conversion-rate">
         <ConversionRateOverTime data={conversionData} />
       </div>
-      <div className="ReviewTrend">
+      <div className="review-trend ">
         <CustomerReviewTrend data={reviewData} />
       </div>
-      <div className="LatestComments">
+      <div className="latest-comments">
         <LatestComments comments={comments} />
       </div>
     </div>

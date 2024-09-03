@@ -44,7 +44,7 @@ const GenerateReportButton: React.FC<GenerateReportButtonProps> = ({
   };
 
   return (
-    <div className="generate-report-container">
+    <div className="GenerateReportButton">
       <button className="generate-report-button" onClick={handleGenerateReport}>
         Generate Report
       </button>

@@ -55,7 +55,7 @@ const LineChartWithToggle: React.FC<LineChartWithToggleProps> = ({
   const filteredData = getFilteredData();
 
   return (
-    <div className="line-chart-with-toggle">
+    <div className="LineChartWithToggle">
       <h2>{title}</h2>
       <div className="toggle-group-container">
         {/* Toggle buttons for selecting the time frame */}
