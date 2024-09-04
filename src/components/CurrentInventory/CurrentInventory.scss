@@ -1,6 +1,8 @@
-.current-inventory-container {
-  background-color: #fff;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+@use '../../styles/colors' as *;
+
+.CurrentInventory {
+  background-color: $white;
+  box-shadow: 0px 4px 20px $light-shadow;
   border-radius: 8px;
   padding: 1em;
   text-align: center;
@@ -9,23 +11,23 @@
   align-items: center;
   height: 100px;
   width: 100%;
-}
 
-.current-inventory-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+  .current-inventory-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 
-.current-inventory-title {
-  font-size: 1.5em;
-  color: #093a6b;
-  margin-bottom: 8px;
-}
+  .current-inventory-title {
+    font-size: 1.5em;
+    color:$primary-color;
+    margin-bottom: 8px;
+  }
 
-.current-inventory-count {
-  font-size: 2.5em;
-  font-weight: bold;
-  color: #0c1ec1;
+  .current-inventory-count {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: $accent-color;
+  }
 }

@@ -1,100 +1,57 @@
-import React, { useState } from "react";
+import React, { useMemo } from "react";
+import { useAppDispatch, useAppSelector } from "../../hooks/redux/reduxHooks";
+import { RootState } from "../../store/store";
+import { selectProduct } from "../../reducers/productSlice";
+import { useGetProductDataQuery } from "../../services/productApi";
 import ProductSelector from "../../components/ProductSelector/ProductSelector";
 import ProductDataDisplay from "../../components/ProductDataDisplay/ProductDataDisplay";
-import {
-  sweaterSalesData,
-  sweaterConversionData,
-  sweaterReviewData,
-  sweaterComments,
-  sweaterInventory,
-  jacketSalesData,
-  jacketConversionData,
-  jacketReviewData,
-  jacketComments,
-  jacketInventory,
-  jeansSalesData,
-  jeansConversionData,
-  jeansReviewData,
-  jeansComments,
-  jeansInventory,
-  dressSalesData,
-  dressConversionData,
-  dressReviewData,
-  dressComments,
-  dressInventory,
-} from "../../mockData";
+import { getErrorMessage } from "../../utils/errorHandler"; // Импорт утилитарной функции
 import "./ProductDashboard.scss";
 
-// List of available products
-const products = ["Sweater", "Jacket", "Jeans", "Dress"];
-
 const ProductDashboard: React.FC = () => {
-  // State to track the currently selected product
-  const [selectedProduct, setSelectedProduct] = useState<string>("Sweater");
+  const dispatch = useAppDispatch();
+  const selectedProduct = useAppSelector((state: RootState) => state.products.selectedProduct);
 
-  // Function to handle changes in product selection
-  const handleProductChange = (
-    _event: React.SyntheticEvent,
-    value: string | null
-  ) => {
+  const { data: productsData, error, isLoading } = useGetProductDataQuery();
+
+  // Product List memoization to prevent unnecessary re-renders 
+  const productList = useMemo(
+    () => productsData ? Object.keys(productsData).map(product => product.charAt(0).toUpperCase() + product.slice(1)) : [],
+    [productsData]
+  );
+  const productData = useMemo(
+    () => productsData ? productsData[selectedProduct.toLowerCase()] : null,
+    [productsData, selectedProduct]
+  );
+
+  const handleProductChange = (_event: React.SyntheticEvent, value: string | null) => {
     if (value) {
-      setSelectedProduct(value);
+      dispatch(selectProduct(value));
     }
   };
 
-  // Variables to hold data specific to the selected product
-  let salesData, conversionData, reviewData, comments, inventoryCount;
+  const errorMessage = getErrorMessage(error);
 
-  // Switch statement to set the appropriate data based on the selected product
-  switch (selectedProduct) {
-    case "Jacket":
-      salesData = jacketSalesData;
-      conversionData = jacketConversionData;
-      reviewData = jacketReviewData;
-      comments = jacketComments;
-      inventoryCount = jacketInventory;
-      break;
-    case "Jeans":
-      salesData = jeansSalesData;
-      conversionData = jeansConversionData;
-      reviewData = jeansReviewData;
-      comments = jeansComments;
-      inventoryCount = jeansInventory;
-      break;
-    case "Dress":
-      salesData = dressSalesData;
-      conversionData = dressConversionData;
-      reviewData = dressReviewData;
-      comments = dressComments;
-      inventoryCount = dressInventory;
-      break;
-    default:
-      // Default to "Sweater" data if no product is selected or if "Sweater" is selected
-      salesData = sweaterSalesData;
-      conversionData = sweaterConversionData;
-      reviewData = sweaterReviewData;
-      comments = sweaterComments;
-      inventoryCount = sweaterInventory;
-      break;
-  }
+  if (isLoading) return <div>Loading...</div>;
+  if (errorMessage) return <div>{errorMessage}</div>;
 
   return (
     <div className="ProductDashboard">
       <h1>Product Dashboard</h1>
-      {/* Component for selecting a product */}
       <ProductSelector
         selectedProduct={selectedProduct}
         onProductChange={handleProductChange}
-        options={products}
+        options={productList}
       />
-      {/* Component for displaying data related to the selected product */}
-      <ProductDataDisplay
-        salesData={salesData}
-        conversionData={conversionData}
-        reviewData={reviewData}
-        comments={comments}
-        inventoryCount={inventoryCount}
-      />
+      {productData && (
+        <ProductDataDisplay
+          salesData={productData.salesData}
+          conversionData={productData.conversionData}
+          reviewData={productData.reviewData}
+          comments={productData.comments}
+          inventoryCount={productData.inventory}
+        />
+      )}
     </div>
   );
 };

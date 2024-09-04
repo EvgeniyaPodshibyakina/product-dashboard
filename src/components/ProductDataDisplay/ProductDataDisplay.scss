@@ -4,42 +4,42 @@
   grid-template-rows: 0.3fr 1fr 1fr;
   grid-gap: 3em;
 
-  .CurrentInventory {
-    grid-column: 1; // Третья колонка
-    grid-row: 1; // Вторая строка
+  .current-inventory {
+    grid-column: 1; 
+    grid-row: 1; 
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; // Расположить внизу секции
+    justify-content: flex-start; 
     align-items: center;
   }
 
-  .ReportButton {
+  .report-button {
     grid-column: 2; 
     grid-row: 1; 
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; // Расположить сверху секции
+    justify-content: flex-start; 
     align-items: center;
   }
 
-  .SalesOverTime {
+  .sales-over-time {
     grid-column: 1;
-    grid-row: 2; // Занимает две строки
+    grid-row: 2; 
   }
 
 
-  .LatestComments {
+  .latest-comments {
     grid-column: 2;
     grid-row: 2;
     display: flex;
     flex-direction: column;
   }
 
-  .ConversionRate {
-    grid-column: 1; // Третья строка
+  .conversion-rate {
+    grid-column: 1; 
   }
 
-  .ReviewTrend {
+  .review-trend {
     grid-column: 2; 
     grid-row: 3; 
   }

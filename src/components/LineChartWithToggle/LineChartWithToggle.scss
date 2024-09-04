@@ -1,4 +1,6 @@
-.line-chart-with-toggle {
+@use '../../styles/colors' as *;
+
+.LineChartWithToggle {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -20,13 +22,13 @@
 
   .toggle-button {
     transition: background-color 0.3s ease, color 0.3s ease;
-    color: #093a6b;
-    padding: 0.5em 1em; /* Default padding */
-    font-size: 1rem; /* Default font size */
+    color: $primary-color;
+    padding: 0.5em 1em; 
+    font-size: 1rem;  
     
     &:hover {
-      background-color: rgba(25, 118, 210, 0.1);
-      color: #1976d2;
+      background-color: $hover-background-color;
+      color: $hover-color;
     }
   }
 

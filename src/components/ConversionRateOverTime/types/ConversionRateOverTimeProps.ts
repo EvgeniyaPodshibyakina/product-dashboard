@@ -1,4 +1,4 @@
-import { ConversionData } from "../../../mockData/types";
+import { ConversionData } from "../../../types/DataTypes";
 
 export interface ConversionRateOverTimeProps {
   data: ConversionData[];

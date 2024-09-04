@@ -1,11 +1,4 @@
-import {
-  CommentData,
-  ConversionData,
-  ReviewData,
-  SalesData,
-} from "../../../mockData/types";
-
-export type ChartData = SalesData | ConversionData | ReviewData | CommentData;
+import { ChartData } from "../../../types";
 
 export interface LineChartWithToggleProps {
   title: string;

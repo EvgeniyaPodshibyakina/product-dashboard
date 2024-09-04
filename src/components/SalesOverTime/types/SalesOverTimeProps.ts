@@ -1,4 +1,4 @@
-import { SalesData } from "../../../mockData/types";
+import { SalesData } from "../../../types/DataTypes";
 
 export interface SalesOverTimeProps {
   data: SalesData[];

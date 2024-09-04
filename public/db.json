@@ -1,0 +1,212 @@
+{
+    "products": {
+      "dress": {
+        "salesData": [
+          { "month": "Sep", "sales": 2800 },
+          { "month": "Oct", "sales": 2700 },
+          { "month": "Nov", "sales": 3000 },
+          { "month": "Dec", "sales": 2300 },
+          { "month": "Jan", "sales": 3700 },
+          { "month": "Feb", "sales": 3200 },
+          { "month": "Mar", "sales": 2500 },
+          { "month": "Apr", "sales": 2900 },
+          { "month": "May", "sales": 2200 },
+          { "month": "Jun", "sales": 2600 },
+          { "month": "Jul", "sales": 3400 },
+          { "month": "Aug", "sales": 3900 }
+        ],
+        "conversionData": [
+          { "month": "Sep", "conversionRate": 0.27 },
+          { "month": "Oct", "conversionRate": 0.26 },
+          { "month": "Nov", "conversionRate": 0.3 },
+          { "month": "Dec", "conversionRate": 0.23 },
+          { "month": "Jan", "conversionRate": 0.37 },
+          { "month": "Feb", "conversionRate": 0.32 },
+          { "month": "Mar", "conversionRate": 0.25 },
+          { "month": "Apr", "conversionRate": 0.29 },
+          { "month": "May", "conversionRate": 0.22 },
+          { "month": "Jun", "conversionRate": 0.26 },
+          { "month": "Jul", "conversionRate": 0.34 },
+          { "month": "Aug", "conversionRate": 0.39 }
+        ],
+        "reviewData": [
+          { "month": "Sep", "averageRating": 4.1 },
+          { "month": "Oct", "averageRating": 4.2 },
+          { "month": "Nov", "averageRating": 4.0 },
+          { "month": "Dec", "averageRating": 4.3 },
+          { "month": "Jan", "averageRating": 4.6 },
+          { "month": "Feb", "averageRating": 4.4 },
+          { "month": "Mar", "averageRating": 4.2 },
+          { "month": "Apr", "averageRating": 4.3 },
+          { "month": "May", "averageRating": 4.2 },
+          { "month": "Jun", "averageRating": 4.4 },
+          { "month": "Jul", "averageRating": 4.5 },
+          { "month": "Aug", "averageRating": 4.7 }
+        ],
+        "comments": [
+          { "author": "Ella", "text": "Beautiful dress!" },
+          { "author": "Grace", "text": "Perfect for special occasions." },
+          { "author": "Amelia", "text": "Fits like a glove." },
+          { "author": "Henry", "text": "Elegant and classy." },
+          { "author": "Victoria", "text": "Love the fabric and design." }
+        ],
+        "inventory": 150
+      },
+      "jacket": {
+        "salesData": [
+          { "month": "Sep", "sales": 2800 },
+          { "month": "Oct", "sales": 2500 },
+          { "month": "Nov", "sales": 2900 },
+          { "month": "Dec", "sales": 2200 },
+          { "month": "Jan", "sales": 3500 },
+          { "month": "Feb", "sales": 3100 },
+          { "month": "Mar", "sales": 2400 },
+          { "month": "Apr", "sales": 2880 },
+          { "month": "May", "sales": 1990 },
+          { "month": "Jun", "sales": 2300 },
+          { "month": "Jul", "sales": 3200 },
+          { "month": "Aug", "sales": 3700 }
+        ],
+        "conversionData": [
+          { "month": "Sep", "conversionRate": 0.25 },
+          { "month": "Oct", "conversionRate": 0.22 },
+          { "month": "Nov", "conversionRate": 0.3 },
+          { "month": "Dec", "conversionRate": 0.2 },
+          { "month": "Jan", "conversionRate": 0.35 },
+          { "month": "Feb", "conversionRate": 0.32 },
+          { "month": "Mar", "conversionRate": 0.25 },
+          { "month": "Apr", "conversionRate": 0.28 },
+          { "month": "May", "conversionRate": 0.19 },
+          { "month": "Jun", "conversionRate": 0.23 },
+          { "month": "Jul", "conversionRate": 0.32 },
+          { "month": "Aug", "conversionRate": 0.37 }
+        ],
+        "reviewData": [
+          { "month": "Sep", "averageRating": 4.0 },
+          { "month": "Oct", "averageRating": 4.1 },
+          { "month": "Nov", "averageRating": 3.9 },
+          { "month": "Dec", "averageRating": 4.3 },
+          { "month": "Jan", "averageRating": 4.6 },
+          { "month": "Feb", "averageRating": 4.4 },
+          { "month": "Mar", "averageRating": 4.2 },
+          { "month": "Apr", "averageRating": 4.3 },
+          { "month": "May", "averageRating": 4.1 },
+          { "month": "Jun", "averageRating": 4.4 },
+          { "month": "Jul", "averageRating": 4.5 },
+          { "month": "Aug", "averageRating": 4.7 }
+        ],
+        "comments": [
+          { "author": "Sophia", "text": "Great jacket!" },
+          { "author": "Olivia", "text": "Highly recommend this jacket!" },
+          { "author": "James", "text": "Very durable." },
+          { "author": "Isabella", "text": "Perfect fit." },
+          { "author": "Liam", "text": "Love the color and material." }
+        ],
+        "inventory": 75
+      },
+      "jeans": {
+        "salesData": [
+          { "month": "Sep", "sales": 3200 },
+          { "month": "Oct", "sales": 2800 },
+          { "month": "Nov", "sales": 3100 },
+          { "month": "Dec", "sales": 2400 },
+          { "month": "Jan", "sales": 3800 },
+          { "month": "Feb", "sales": 3400 },
+          { "month": "Mar", "sales": 2600 },
+          { "month": "Apr", "sales": 2980 },
+          { "month": "May", "sales": 2090 },
+          { "month": "Jun", "sales": 2500 },
+          { "month": "Jul", "sales": 3600 },
+          { "month": "Aug", "sales": 4100 }
+        ],
+        "conversionData": [
+          { "month": "Sep", "conversionRate": 0.28 },
+          { "month": "Oct", "conversionRate": 0.25 },
+          { "month": "Nov", "conversionRate": 0.31 },
+          { "month": "Dec", "conversionRate": 0.22 },
+          { "month": "Jan", "conversionRate": 0.38 },
+          { "month": "Feb", "conversionRate": 0.34 },
+          { "month": "Mar", "conversionRate": 0.26 },
+          { "month": "Apr", "conversionRate": 0.29 },
+          { "month": "May", "conversionRate": 0.21 },
+          { "month": "Jun", "conversionRate": 0.25 },
+          { "month": "Jul", "conversionRate": 0.36 },
+          { "month": "Aug", "conversionRate": 0.41 }
+        ],
+        "reviewData": [
+          { "month": "Sep", "averageRating": 4.2 },
+          { "month": "Oct", "averageRating": 4.3 },
+          { "month": "Nov", "averageRating": 4.0 },
+          { "month": "Dec", "averageRating": 4.4 },
+          { "month": "Jan", "averageRating": 4.7 },
+          { "month": "Feb", "averageRating": 4.5 },
+          { "month": "Mar", "averageRating": 4.3 },
+          { "month": "Apr", "averageRating": 4.4 },
+          { "month": "May", "averageRating": 4.3 },
+          { "month": "Jun", "averageRating": 4.5 },
+          { "month": "Jul", "averageRating": 4.6 },
+          { "month": "Aug", "averageRating": 4.8 }
+        ],
+        "comments": [
+          { "author": "Alexander", "text": "Best jeans I've ever owned." },
+          { "author": "Mia", "text": "Super comfortable." },
+          { "author": "Benjamin", "text": "Great quality." },
+          { "author": "Charlotte", "text": "Perfect fit." },
+          { "author": "Lucas", "text": "Stylish and durable." }
+        ],
+        "inventory": 200
+      },
+      "sweater": {
+        "salesData": [
+          { "month": "Sep", "sales": 3000 },
+          { "month": "Oct", "sales": 2000 },
+          { "month": "Nov", "sales": 2780 },
+          { "month": "Dec", "sales": 1890 },
+          { "month": "Jan", "sales": 4000 },
+          { "month": "Feb", "sales": 3000 },
+          { "month": "Mar", "sales": 2000 },
+          { "month": "Apr", "sales": 2780 },
+          { "month": "May", "sales": 1890 },
+          { "month": "Jun", "sales": 2390 },
+          { "month": "Jul", "sales": 3490 },
+          { "month": "Aug", "sales": 4000 }
+        ],
+        "conversionData": [
+          { "month": "Sep", "conversionRate": 0.3 },
+          { "month": "Oct", "conversionRate": 0.2 },
+          { "month": "Nov", "conversionRate": 0.278 },
+          { "month": "Dec", "conversionRate": 0.189 },
+          { "month": "Jan", "conversionRate": 0.4 },
+          { "month": "Feb", "conversionRate": 0.3 },
+          { "month": "Mar", "conversionRate": 0.2 },
+          { "month": "Apr", "conversionRate": 0.278 },
+          { "month": "May", "conversionRate": 0.189 },
+          { "month": "Jun", "conversionRate": 0.239 },
+          { "month": "Jul", "conversionRate": 0.349 },
+          { "month": "Aug", "conversionRate": 0.4 }
+        ],
+        "reviewData": [
+          { "month": "Sep", "averageRating": 3.5 },
+          { "month": "Oct", "averageRating": 4.0 },
+          { "month": "Nov", "averageRating": 3.8 },
+          { "month": "Dec", "averageRating": 4.2 },
+          { "month": "Jan", "averageRating": 4.5 },
+          { "month": "Feb", "averageRating": 4.3 },
+          { "month": "Mar", "averageRating": 4.1 },
+          { "month": "Apr", "averageRating": 4.0 },
+          { "month": "May", "averageRating": 4.2 },
+          { "month": "Jun", "averageRating": 4.3 },
+          { "month": "Jul", "averageRating": 4.5 },
+          { "month": "Aug", "averageRating": 4.6 }
+        ],
+        "comments": [
+          { "author": "John", "text": "Great sweater!" },
+          { "author": "Emily", "text": "Very comfortable!" },
+          { "author": "David", "text": "Nice and warm." },
+          { "author": "Sarah", "text": "Stylish and cozy." },
+          { "author": "Michael", "text": "Perfect for winter." }
+        ],
+        "inventory": 123
+      }
+    }
+  }

@@ -1,30 +1,32 @@
-.generate-report-container {
+@use '../../styles/colors' as *;
+
+.GenerateReportButton {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #0c1ec1;
-  color: #fff;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+  background-color: $accent-color;
+  color: $white;
+  box-shadow: 0px 4px 20px $dark-shadow;
   border-radius: 8px;
   padding: 1em;
   height: 100px;
   width: 100%;
-}
 
-.generate-report-button {
-  width: 100%;
-  height: 100%;
-  background-color: transparent;
-  border: none;
-  color: #fff;
-  font-size: 1.5em;
-  text-align: center;
-  cursor: pointer;
-  padding: 0;
-  text-transform: none;
-  outline: none;
+  .generate-report-button {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    color: $white;
+    font-size: 1.5em;
+    text-align: center;
+    cursor: pointer;
+    padding: 0;
+    text-transform: none;
+    outline: none;
 
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    &:hover {
+      background-color: $light-shadow;
+    }
   }
 }

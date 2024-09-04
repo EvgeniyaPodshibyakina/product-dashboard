@@ -6,6 +6,7 @@ import CustomerReviewTrend from "../CustomerReviewTrend/CustomerReviewTrend";
 import LatestComments from "../LatestComments/LatestComments";
 import { ProductDataDisplayProps } from "./types/ProductDataDisplayProps";
 import GenerateReportButton from "../GenerateReportButton/GenerateReportButton";
+import { useReportData } from "../../hooks/ui/useReportData/useReportData";
 import "./ProductDataDisplay.scss";
 
 // Component to display the product data using various components
@@ -16,33 +17,33 @@ const ProductDataDisplay: React.FC<ProductDataDisplayProps> = ({
   comments,
   inventoryCount,
 }) => {
-  // Preparing data to be used for report generation
-  const reportData = {
+  // use custom hook for data preparation
+  const reportData = useReportData({
     salesData,
     conversionData,
     reviewData,
     comments,
     inventoryCount,
-  };
+  });
 
   return (
     <div className="ProductDataDisplay">
-      <div className="ReportButton">
+      <div className="report-button ">
         <GenerateReportButton reportData={reportData} />
       </div>
-      <div className="CurrentInventory">
+      <div className="current-inventory ">
         <CurrentInventory inventoryCount={inventoryCount} />
       </div>
-      <div className="SalesOverTime">
+      <div className="sales-over-time ">
         <SalesOverTime data={salesData} />
       </div>
-      <div className="ConversionRate">
+      <div className="conversion-rate">
         <ConversionRateOverTime data={conversionData} />
       </div>
-      <div className="ReviewTrend">
+      <div className="review-trend ">
         <CustomerReviewTrend data={reviewData} />
       </div>
-      <div className="LatestComments">
+      <div className="latest-comments">
         <LatestComments comments={comments} />
       </div>
     </div>

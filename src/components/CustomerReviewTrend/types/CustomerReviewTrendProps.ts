@@ -1,4 +1,4 @@
-import { ReviewData } from "../../../mockData/types";
+import { ReviewData } from "../../../types/DataTypes";
 
 export interface CustomerReviewTrendProps {
   data: ReviewData[];

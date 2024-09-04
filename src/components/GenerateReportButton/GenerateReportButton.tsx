@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { ProductDataDisplayProps } from "../ProductDataDisplay/types/ProductDataDisplayProps";
 import { GenerateReportButtonProps } from "./types/GenerateReportButtonProps";
 import "./GenerateReportButton.scss";
@@ -28,6 +28,9 @@ const GenerateReportButton: React.FC<GenerateReportButtonProps> = ({
     return csvRows.join("\n");
   };
 
+  // Memoized CSV content to avoid unnecessary recalculations
+  const csvContent = useMemo(() => generateCSV(reportData), [reportData]);
+
   // Triggers the download of the generated CSV file
   const downloadCSV = (csvContent: string, fileName: string) => {
     const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
@@ -39,12 +42,11 @@ const GenerateReportButton: React.FC<GenerateReportButtonProps> = ({
 
   // Handles the report generation process
   const handleGenerateReport = () => {
-    const csvContent = generateCSV(reportData);
     downloadCSV(csvContent, "product_report.csv");
   };
 
   return (
-    <div className="generate-report-container">
+    <div className="GenerateReportButton">
       <button className="generate-report-button" onClick={handleGenerateReport}>
         Generate Report
       </button>
