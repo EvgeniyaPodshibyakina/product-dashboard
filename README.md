@@ -1,14 +1,15 @@
+
 # açai-travel-test
 
 # Product Dashboard
 
-This project is a **Product Dashboard** application built with React and TypeScript. The dashboard provides an overview of various product performance metrics, including sales data, conversion rates, customer reviews, and inventory status. Users can switch between different products (Sweater, Jacket, Jeans, Dress) to view specific data related to each product.
+This project is a **Product Dashboard** application built with React, TypeScript, and Redux. The dashboard provides an overview of various product performance metrics, including sales data, conversion rates, customer reviews, and inventory status. Users can switch between different products (Sweater, Jacket, Jeans, Dress) to view specific data related to each product. The project is optimized for reusability and performance, utilizing custom hooks, memoization, modular SCSS styling, and utility functions for consistent error handling.
 
 ## Project Structure
 
 The project is structured as follows:
 
-- **components**: Contains components used across the application, including charts, inventory display, comments, and buttons.
+- **components**: Contains reusable components used across the application, including charts, inventory display, comments, and buttons.
   - **ConversionRateOverTime**: Component displaying conversion rate trends over time.
   - **CurrentInventory**: Component displaying current inventory status.
   - **CustomerReviewTrend**: Component displaying customer review trends over time.
@@ -19,16 +20,36 @@ The project is structured as follows:
   - **ProductSelector**: Component allowing users to select a product to view data for.
   - **SalesOverTime**: Component displaying sales trends over time.
 
-- **mockData**: Contains mock data files used to simulate real data for each product.
+- **hooks**: Contains custom hooks extracted from components to improve maintainability, reusability, and separation of concerns.
+  - **redux**: Contains Redux-specific hooks for dispatching and selecting from the store.
+    - **reduxHooks.ts**: Includes `useAppDispatch` and `useAppSelector` to manage Redux state efficiently.
+  - **ui**: Contains UI-specific hooks to handle UI-related logic and state management.
+    - **useTimeFrame.ts**: Manages the time frame selection logic for charts, ensuring flexibility in filtering data over different periods.
+    - **useReportData.ts**: Prepares and structures data for generating reports, including functions for CSV generation and download functionality.
+      - **types**: Includes relevant TypeScript interfaces and types for the `useReportData` hook.
+
+- **services**: Contains the RTK Query setup for data fetching and API interactions.
+  - **productApi**: Configured RTK Query API slice for fetching product data from `db.json`.
+
+- **store**: Contains the Redux store and slices for state management.
+  - **productSlice**: Redux slice for managing selected products.
+
+- **styles**: Modular SCSS files with variables for consistent color usage and theme management.
+  - **colors.scss**: A centralized file for color variables used throughout the application.
+
+- **utils**: Utility functions for common functionality across the application.
+  - **errorHandler.ts**: A utility function to standardize error handling and display consistent error messages.
+
+- **db.json**: Serves as the local data source, replacing mock data files.
 
 - **sections/ProductDashboard**: Contains the main dashboard layout, which includes the Product Selector and the Product Data Display components.
 
-- **App.tsx**: Which displays the Product Dashboard itself
+- **App.tsx**: The root component that renders the Product Dashboard and integrates global state management with Redux.
 
 ## Setup and Running Instructions
 
 ### Prerequisites
-This project was made with Vite
+This project was made with Vite:
 - Node.js (>= 18.x)
 - npm
 
@@ -58,23 +79,29 @@ The application will be available at `http://localhost:5174`.
 
 ## Additional Information
 
+### Key Features and Changes
+
+- **DB Integration**: Replaced mock data files with a `db.json` file for centralized data management and easier access to product data.
+- **Redux and RTK Query**: Integrated Redux and RTK Query for state management and efficient data fetching with caching.
+- **Modular SCSS**: SCSS files were modularized, and color variables were introduced for a more maintainable and consistent design.
+- **Custom Hooks**: Refactored component logic into reusable custom hooks, improving code reusability, maintainability, and keeping components focused on rendering.
+- **Memoization**: Added memoization to optimize performance, preventing unnecessary re-renders and recalculations when handling large datasets.
+- **Utility Functions**: Added a utility for standardized error handling to ensure consistent error display across the app.
+
 ### Challenges Faced
 
-- **Defining Mock Data**: Not my favorite part, I would have preferred to have an api from which to fetch the data. Even if it means addig data transformation functions to meet libraries requirement for data format (Recharts, for example)
-- **Reusable Components**: Line chart had to be generic because there are 3 charts that are almost identical.
-- **State Management**: Handling state between different components, especially for data filtering and the product selector, required careful planning.
-  But in the same category of State management I think using state managers (as Redux) would have been over-engineering at this point.
-- **Tests**: Add testing
-
+- **API-less Setup**: With no real API available, I used `db.json` as a mock data source, but integrating an actual API remains a future improvement.
+- **Reusable Components**: Refactored the chart components to be generic and reusable for different product metrics (sales, conversion, reviews).
+- **State Management**: Introduced Redux and RTK Query to manage the state efficiently and handle product data fetching.
+  
 ### Future Improvements
 
-- **API Integration**: Integrate with a real API to fetch product data dynamically.
-- **Enhanced Reporting**: Expand the reporting functionality to include more file formats and customizable report content.
-- **Responsive Design**: Add media queries for mobile device sizes
+- **API Integration**: Replace the local `db.json` with a real API to dynamically fetch product data.
+- **Enhanced Reporting**: Expand the reporting functionality to include multiple file formats and customizable report generation.
+- **Responsive Design**: Improve media queries and responsive layouts for mobile and tablet devices.
   
-### In case of scaling the project 
+### Scaling Considerations
 
-- **Performance Optimization**: Continue to optimize the performance, especially for large datasets.
-- **Styles Optimization**: Add variables for colors.
-- **State managment tools**: Add Redux, Zustand or something else for state management depending on which data fetching tool will be chosen, for example RTK Query in case of using Redux.
-
+- **Performance Optimization**: Continuously optimize the performance for larger datasets, especially when more products are added.
+- **Theming and Styling**: Continue expanding on SCSS variables for more flexible theming.
+- **Advanced State Management**: Extend Redux and RTK Query as the app grows, especially if more complex interactions like editing or deleting product data are introduced.
