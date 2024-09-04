@@ -6,6 +6,7 @@ import CustomerReviewTrend from "../CustomerReviewTrend/CustomerReviewTrend";
 import LatestComments from "../LatestComments/LatestComments";
 import { ProductDataDisplayProps } from "./types/ProductDataDisplayProps";
 import GenerateReportButton from "../GenerateReportButton/GenerateReportButton";
+import { useReportData } from "../../hooks/ui/useReportData/useReportData";
 import "./ProductDataDisplay.scss";
 
 // Component to display the product data using various components
@@ -16,14 +17,14 @@ const ProductDataDisplay: React.FC<ProductDataDisplayProps> = ({
   comments,
   inventoryCount,
 }) => {
-  // Preparing data to be used for report generation
-  const reportData = {
+  // use custom hook for data preparation
+  const reportData = useReportData({
     salesData,
     conversionData,
     reviewData,
     comments,
     inventoryCount,
-  };
+  });
 
   return (
     <div className="ProductDataDisplay">

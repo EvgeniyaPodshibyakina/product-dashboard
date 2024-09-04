@@ -1,0 +1,14 @@
+// src/styles/colors.scss
+
+// Primary colors
+$primary-color: #093a6b; // Dark blue color for headers and primary text
+$accent-color: #0c1ec1;  // Main accent color (e.g., for buttons)
+$hover-color: #1976d2;   // Hover state color for interactive elements
+$hover-background-color: rgba(25, 118, 210, 0.1); // Hover for background color for interactive elements
+
+// Neutral colors
+$white: #fff;            // White color for background and text
+
+// Shadow colors
+$light-shadow: rgba(0, 0, 0, 0.1); // Light shadow for subtle box-shadow effects
+$dark-shadow: rgba(0, 0, 0, 0.2);  // Darker shadow for stronger box-shadow effects

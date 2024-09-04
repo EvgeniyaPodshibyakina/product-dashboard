@@ -1,6 +1,8 @@
+@use '../../styles/colors' as *;
+
 .CurrentInventory {
-  background-color: #fff;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  background-color: $white;
+  box-shadow: 0px 4px 20px $light-shadow;
   border-radius: 8px;
   padding: 1em;
   text-align: center;
@@ -19,13 +21,13 @@
 
   .current-inventory-title {
     font-size: 1.5em;
-    color: #093a6b;
+    color:$primary-color;
     margin-bottom: 8px;
   }
 
   .current-inventory-count {
     font-size: 2.5em;
     font-weight: bold;
-    color: #0c1ec1;
+    color: $accent-color;
   }
 }

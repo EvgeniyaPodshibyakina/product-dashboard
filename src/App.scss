@@ -1,3 +1,5 @@
+@use './styles/colors.scss' as *;
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -5,14 +7,10 @@
   text-align: center;
   h1,
   h2 {
-    color: #093a6b;
+    color: $primary-color;
   }
 }
 
 .card {
   padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }

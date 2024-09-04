@@ -3,7 +3,7 @@ import {
   ReviewData,
   SalesData,
   CommentData,
-} from "../../../mockData/types";
+} from "../../../types/DataTypes";
 
 export interface ProductDataDisplayProps {
   salesData: SalesData[];

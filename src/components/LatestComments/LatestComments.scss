@@ -1,3 +1,5 @@
+@use '../../styles/colors' as *;
+
 .LatestComments {
   display: flex;
   flex-direction: column;
@@ -5,12 +7,12 @@
   align-items: stretch;
   font-size: 1.2rem;
   font-weight: bold;
-  color: #093a6b;
+  color: $primary-color;
   line-height: 1.5;
 
   .comments-title {
     text-align: center;
-    color: #093a6b;
+    color: $primary-color;
   }
   .header {
     margin: 1em 0 0 0;
@@ -28,7 +30,7 @@
 
   .MuiListItemText-secondary {
     font-size: 1.2rem;
-    color: #093a6b;
+    color: $primary-color;
   }
 
   .MuiListItem-root {
