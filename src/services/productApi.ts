@@ -4,7 +4,7 @@ import { ProductData } from './types/ProductData';
 // Setting up the API slice
 export const productApi = createApi({
   reducerPath: 'productApi',
-  baseQuery: fetchBaseQuery({ baseUrl: '/' }),
+  baseQuery: fetchBaseQuery({ baseUrl: ' http://localhost:5173' }),
   endpoints: (builder) => ({
     // Query to fetch product data
     getProductData: builder.query<Record<string, ProductData>, void>({

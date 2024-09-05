@@ -1,3 +1,4 @@
+import React from 'react';
 import "./App.scss";
 import ProductDashboard from "./sections/ProductDashboard/ProductDashboard";
 

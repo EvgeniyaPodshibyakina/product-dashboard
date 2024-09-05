@@ -6,8 +6,9 @@ const useTimeFrame = (data: ChartData[]) => {
 
   const handleTimeFrameChange = (
     _event: React.MouseEvent<HTMLElement>,
-    newTimeFrame: string
+    newTimeFrame: string | null
   ) => {
+    console.log("Новая временная рамка:", newTimeFrame);
     if (newTimeFrame !== null) {
       setTimeFrame(newTimeFrame);
     }
