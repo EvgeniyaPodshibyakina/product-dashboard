@@ -77,6 +77,23 @@ npm run dev
 
 The application will be available at `http://localhost:5174`.
 
+## Testing
+
+I have added extensive test coverage for this project, including unit tests for slices, services (APIs), and key components. The tests were implemented using **Vitest** for its speed and integration with Vite, replacing the more commonly used Jest.
+
+To run the tests, use the following command:
+
+```sh
+npm run test
+```
+
+This will execute all the unit tests and display the results.
+
+## Challenges Faced
+
+- **API-less Setup**: With no real API available, I used `db.json` as a mock data source, but integrating an actual API remains a future improvement.
+- **Tests Setup with Vitest**: Vite introduced some challenges when it came to setting up Jest for testing. To resolve this, I transitioned to **Vitest**, which is more optimized for Vite-based projects and offers faster test execution. Additionally, the upgrade to **MSW 2.0** brought about significant changes, and migrating from version 1.x to 2.x introduced complexities, particularly in testing the **ProductApi** with Redux and RTK Query. These updates required refactoring the API mocks and test structure.
+
 ## Additional Information
 
 ### Key Features and Changes
@@ -88,12 +105,6 @@ The application will be available at `http://localhost:5174`.
 - **Memoization**: Added memoization to optimize performance, preventing unnecessary re-renders and recalculations when handling large datasets.
 - **Utility Functions**: Added a utility for standardized error handling to ensure consistent error display across the app.
 
-### Challenges Faced
-
-- **API-less Setup**: With no real API available, I used `db.json` as a mock data source, but integrating an actual API remains a future improvement.
-- **Reusable Components**: Refactored the chart components to be generic and reusable for different product metrics (sales, conversion, reviews).
-- **State Management**: Introduced Redux and RTK Query to manage the state efficiently and handle product data fetching.
-  
 ### Future Improvements
 
 - **API Integration**: Replace the local `db.json` with a real API to dynamically fetch product data.
