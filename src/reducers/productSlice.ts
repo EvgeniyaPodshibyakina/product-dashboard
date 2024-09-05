@@ -1,11 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { productApi } from '../services/productApi';
-import { ProductState } from './productState/productState';
+import { ProductState } from './productState/ProductState';
 
 export const initialState: ProductState  = {
   selectedProduct: 'Sweater',
   status: 'idle',
-  error:  null,
+  error: null,
 };
 
 
@@ -28,7 +28,10 @@ const productSlice = createSlice({
       })
       .addMatcher(productApi.endpoints.getProductData.matchRejected, (state, action) => {
         state.status = 'failed';
-        state.error = action.error.message ?? 'Failed to fetch product data';
+        // Добавьте проверку, если `action.error.message` является стандартным
+        state.error = action.error?.message === 'Rejected'
+          ? 'Internal Server Error'
+          : action.error.message ?? 'Failed to fetch product data';
       });
   },
 });

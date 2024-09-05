@@ -32,7 +32,10 @@ const LineChartWithToggle: React.FC<LineChartWithToggleProps> = ({
         <ToggleButtonGroup
           value={timeFrame}
           exclusive
-          onChange={setTimeFrame}
+          onChange={(event, newTimeFrame) => {
+            console.log("Клик по кнопке:", newTimeFrame);
+            setTimeFrame(event, newTimeFrame);
+          }}
           aria-label="time frame"
         >
           <ToggleButton value="12" className="toggle-button">
