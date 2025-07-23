@@ -2,7 +2,6 @@ import React from "react";
 import LineChartWithToggle from "../LineChartWithToggle/LineChartWithToggle";
 import { CustomerReviewTrendProps } from "./types/CustomerReviewTrendProps";
 
-// Component to display the Customer Review Trend using a reusable LineChartWithToggle component
 const CustomerReviewTrend: React.FC<CustomerReviewTrendProps> = ({ data }) => {
   return (
     <div className="chart-wrapper">

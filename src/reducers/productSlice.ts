@@ -28,7 +28,6 @@ const productSlice = createSlice({
       })
       .addMatcher(productApi.endpoints.getProductData.matchRejected, (state, action) => {
         state.status = 'failed';
-        // Добавьте проверку, если `action.error.message` является стандартным
         state.error = action.error?.message === 'Rejected'
           ? 'Internal Server Error'
           : action.error.message ?? 'Failed to fetch product data';

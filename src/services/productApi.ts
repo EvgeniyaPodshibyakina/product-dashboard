@@ -1,12 +1,11 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { ProductData } from './types/ProductData';
 
-// Setting up the API slice
 export const productApi = createApi({
   reducerPath: 'productApi',
   baseQuery: fetchBaseQuery({ baseUrl: ' http://localhost:5173' }),
   endpoints: (builder) => ({
-    // Query to fetch product data
+
     getProductData: builder.query<Record<string, ProductData>, void>({
       query: () => `db.json`,
       transformResponse: (response: { products: Record<string, ProductData> }) => {
@@ -16,7 +15,6 @@ export const productApi = createApi({
   }),
 });
 
-// Export hooks for querying and mutations
 export const { 
   useGetProductDataQuery, 
 } = productApi;

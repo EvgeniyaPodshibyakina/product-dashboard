@@ -2,7 +2,6 @@ import { renderHook, act } from '@testing-library/react';
 import useTimeFrame from './useTimeFrame';
 import { ChartData } from '../../types';
 
-// Data example
 const mockData: ChartData[] = [
   { month: 'Jan', sales: 100 },
   { month: 'Feb', sales: 200 },
@@ -29,7 +28,6 @@ describe('useTimeFrame hook', () => {
   it('returns last 6 months of data when time frame is set to 6 months', () => {
     const { result } = renderHook(() => useTimeFrame(mockData));
 
-    // Change the time frame to 6 months
     act(() => {
         result.current.setTimeFrame({} as React.MouseEvent<HTMLElement>, '6');
       });
@@ -41,7 +39,6 @@ describe('useTimeFrame hook', () => {
   it('returns last 3 months of data when time frame is set to 3 months', () => {
     const { result } = renderHook(() => useTimeFrame(mockData));
 
-    // Change the time frame to 3 months
     act(() => {
         result.current.setTimeFrame({} as React.MouseEvent<HTMLElement>, '3');
       });
@@ -53,7 +50,6 @@ describe('useTimeFrame hook', () => {
   it('returns last 1 month of data when time frame is set to 1 month', () => {
     const { result } = renderHook(() => useTimeFrame(mockData));
 
-    // Change the time frame to 1 month
     act(() => {
         result.current.setTimeFrame({} as React.MouseEvent<HTMLElement>, '1');
       });
@@ -66,10 +62,9 @@ describe('useTimeFrame hook', () => {
     const { result } = renderHook(() => useTimeFrame(mockData));
 
     act(() => {
-        result.current.setTimeFrame({} as React.MouseEvent<HTMLElement>, null); // Testing the `null` argument
+        result.current.setTimeFrame({} as React.MouseEvent<HTMLElement>, null); 
       });
 
-    // The time frame and data should remain the same
     expect(result.current.timeFrame).toBe('12');
     expect(result.current.filteredData).toEqual(mockData);
   });

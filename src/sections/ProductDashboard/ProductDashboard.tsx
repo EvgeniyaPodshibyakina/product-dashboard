@@ -5,7 +5,7 @@ import { selectProduct } from "../../reducers/productSlice";
 import { useGetProductDataQuery } from "../../services/productApi";
 import ProductSelector from "../../components/ProductSelector/ProductSelector";
 import ProductDataDisplay from "../../components/ProductDataDisplay/ProductDataDisplay";
-import { getErrorMessage } from "../../utils/errorHandler"; // Импорт утилитарной функции
+import { getErrorMessage } from "../../utils/errorHandler"; 
 import "./ProductDashboard.scss";
 
 const ProductDashboard: React.FC = () => {
@@ -14,7 +14,6 @@ const ProductDashboard: React.FC = () => {
 
   const { data: productsData, error, isLoading } = useGetProductDataQuery();
 
-  // Product List memoization to prevent unnecessary re-renders 
   const productList = useMemo(
     () => productsData ? Object.keys(productsData).map(product => product.charAt(0).toUpperCase() + product.slice(1)) : [],
     [productsData]

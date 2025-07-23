@@ -3,11 +3,10 @@ import { ProductDataDisplayProps } from "../ProductDataDisplay/types/ProductData
 import { GenerateReportButtonProps } from "./types/GenerateReportButtonProps";
 import "./GenerateReportButton.scss";
 
-// Component to generate a report in CSV format from the provided data
 const GenerateReportButton: React.FC<GenerateReportButtonProps> = ({
   reportData,
 }) => {
-  // Generates CSV content from the provided data
+ 
   const generateCSV = (data: ProductDataDisplayProps): string => {
     const headers = ["Metric", "Value"];
     const rows = [
@@ -28,10 +27,8 @@ const GenerateReportButton: React.FC<GenerateReportButtonProps> = ({
     return csvRows.join("\n");
   };
 
-  // Memoized CSV content to avoid unnecessary recalculations
   const csvContent = useMemo(() => generateCSV(reportData), [reportData]);
 
-  // Triggers the download of the generated CSV file
   const downloadCSV = (csvContent: string, fileName: string) => {
     const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
     const link = document.createElement("a");
@@ -40,7 +37,6 @@ const GenerateReportButton: React.FC<GenerateReportButtonProps> = ({
     link.click();
   };
 
-  // Handles the report generation process
   const handleGenerateReport = () => {
     downloadCSV(csvContent, "product_report.csv");
   };

@@ -1,10 +1,9 @@
 import { productApi } from '../services/productApi'; 
 import { server } from '../mocks/server'; 
-import { http, HttpResponse } from 'msw'; //MSW 2.0
+import { http, HttpResponse } from 'msw'; 
 import { describe, it, expect, beforeAll, afterAll, beforeEach } from 'vitest';
-import { store } from '../store/store'; // Import your store
+import { store } from '../store/store'; 
 
-// Example data from db.json
 const db = {
   "products": {
     "dress": {
@@ -62,32 +61,31 @@ const db = {
   }
 };
 
-// Setup and teardown for the mock server
 beforeAll(() => {
   server.listen({
-    onUnhandledRequest: 'warn', // Will show a warning if the request is not intercepted by MSW
+    onUnhandledRequest: 'warn', 
   });
 });
 
 beforeEach(() => {
-  server.resetHandlers(); // Reset all handlers before each test
-  store.dispatch(productApi.util.resetApiState()); // Reset the API state between tests
+  server.resetHandlers(); 
+  store.dispatch(productApi.util.resetApiState());
 });
 
 afterAll(() => server.close());
 
-// Test suite
+
 describe('productApi', () => {
-  // Test for successful request
+  
   it('successfully fetches product data', async () => {
-    // Mock a successful response from MSW
+    
     server.use(
       http.get('http://localhost:5173/db.json', () => {
         return HttpResponse.json({ products: db.products });
       })
     );
 
-    // Make the request via productApi
+    
     const result = await store.dispatch(productApi.endpoints.getProductData.initiate());
 
     expect(result.isSuccess).toBe(true);
@@ -95,14 +93,13 @@ describe('productApi', () => {
   });
 
   it('handles network error', async () => {
-    // Simulate a network error using MSW
+    
     server.use(
       http.get('http://localhost:5173/db.json', () => {
-        return HttpResponse.error(); // Return network error
+        return HttpResponse.error(); 
       })
     );
   
-    // Make the request via productApi
     const result = await store.dispatch(productApi.endpoints.getProductData.initiate());
   
     expect(result.isError).toBe(true);
@@ -110,7 +107,6 @@ describe('productApi', () => {
   });
   
   it('handles server error', async () => {
-    // Simulate a 500 server error using MSW
     server.use(
       http.get('http://localhost:5173/db.json', () => {
         return HttpResponse.json('Internal Server Error', {
@@ -120,10 +116,8 @@ describe('productApi', () => {
       })
     );
   
-    // Make the request via productApi
     const result = await store.dispatch(productApi.endpoints.getProductData.initiate());
   
-    // Ensure the request finishes with an error
     expect(result.isError).toBe(true);
     expect(result.error).toHaveProperty('status', 500);
     expect(result.error).toHaveProperty('data', 'Internal Server Error');

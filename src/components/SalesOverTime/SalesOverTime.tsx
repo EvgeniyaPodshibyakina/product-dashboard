@@ -2,9 +2,8 @@ import React from "react";
 import LineChartWithToggle from "../LineChartWithToggle/LineChartWithToggle";
 import { SalesOverTimeProps } from "./types/SalesOverTimeProps";
 
-// Component to display the Sales Over Time using a reusable LineChartWithToggle component
 const SalesOverTime: React.FC<SalesOverTimeProps> = ({ data }) => {
-  // Function to format the sales value with the currency symbol
+
   const formatPrice = (value: number) => `${value}€`;
   return (
     <div className="chart-wrapper">

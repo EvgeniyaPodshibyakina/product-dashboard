@@ -3,7 +3,6 @@ import { configureStore, Middleware } from '@reduxjs/toolkit';
 import { productApi } from '../services/productApi';
 import productReducer from '../reducers/productSlice';
 
-// Mock data для теста
 const mockProductData = {
   "products": {
       "dress": {
@@ -60,13 +59,13 @@ const mockProductData = {
       }}
 };
 
-// Mocking productApi for testing
+
 vi.mock('./path/to/productApi', () => ({
     productApi: {
       reducerPath: 'productApi',
           // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      reducer: vi.fn((state = {}, _action) => state), // Mock reducer with proper typing
-      middleware: vi.fn<Middleware>(() => (next) => (action) => next(action)), // Mock middleware with proper typing
+      reducer: vi.fn((state = {}, _action) => state), 
+      middleware: vi.fn<Middleware>(() => (next) => (action) => next(action)), 
       endpoints: {
         getProductData: {
           useQuery: vi.fn(() => ({
@@ -84,13 +83,12 @@ describe('Store', () => {
       const store = configureStore({
         reducer: {
           products: productReducer,
-          [productApi.reducerPath]: productApi.reducer, // Use the reducer directly
+          [productApi.reducerPath]: productApi.reducer, 
         },
         middleware: (getDefaultMiddleware) =>
           getDefaultMiddleware().concat(productApi.middleware),
       });
   
-      // Check store initialization
       const state = store.getState();
       expect(state.products).toBeDefined();
       expect(state.productApi).toBeDefined();

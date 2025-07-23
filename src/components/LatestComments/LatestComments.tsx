@@ -5,9 +5,8 @@ import ListItemText from "@mui/material/ListItemText";
 import "./LatestComments.scss";
 import { LatestCommentsProps } from "./types/LatestCommentsProps";
 
-// Component to display the latest comments of the users
 const LatestComments: React.FC<LatestCommentsProps> = ({ comments }) => {
-  // Split the comments into two columns
+
   const half = Math.ceil(comments.length / 2);
   const firstColumn = comments.slice(0, half);
   const secondColumn = comments.slice(half);

@@ -9,7 +9,6 @@ import GenerateReportButton from "../GenerateReportButton/GenerateReportButton";
 import { useReportData } from "../../hooks/ui/useReportData/useReportData";
 import "./ProductDataDisplay.scss";
 
-// Component to display the product data using various components
 const ProductDataDisplay: React.FC<ProductDataDisplayProps> = ({
   salesData,
   conversionData,
@@ -17,7 +16,7 @@ const ProductDataDisplay: React.FC<ProductDataDisplayProps> = ({
   comments,
   inventoryCount,
 }) => {
-  // use custom hook for data preparation
+
   const reportData = useReportData({
     salesData,
     conversionData,

@@ -4,7 +4,6 @@ import LineChartWithToggle from './LineChartWithToggle';
 import { vi } from 'vitest';
 import { ChartData } from '../../types';
 
-// Mocking Recharts components
 vi.mock('recharts', () => ({
   LineChart: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
   Line: () => <div>Line</div>,
@@ -15,14 +14,13 @@ vi.mock('recharts', () => ({
   ResponsiveContainer: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
 }));
 
-// Mocking useTimeFrame hook
 const setTimeFrameMock = vi.fn();
 
 vi.mock('../../hooks/ui/useTimeFrame', () => ({
   default: (data: ChartData[]) => ({
     timeFrame: '12',
     setTimeFrame: setTimeFrameMock,
-    filteredData: data.slice(0, 12), // Return the first 12 months for the initial state
+    filteredData: data.slice(0, 12), 
   }),
 }));
 
@@ -46,7 +44,7 @@ describe('LineChartWithToggle Component', () => {
     data: mockData,
     dataKey: "sales",
     lineColor: "#000",
-    yAxisDomain: [0, 6000] as [number, number], // Ensure that this array strictly contains two numbers
+    yAxisDomain: [0, 6000] as [number, number], 
     yAxisTicks: [1000, 2000, 3000, 4000, 5000, 6000],
     valueFormatter: (value: number) => `${value}€`,
   };
@@ -54,10 +52,8 @@ describe('LineChartWithToggle Component', () => {
   it('renders with correct title and chart', () => {
     render(<LineChartWithToggle {...defaultProps} />);
 
-    // Check that the title is displayed
     expect(screen.getByText(/Sales Over Time/i)).toBeInTheDocument();
 
-    // Check that the key chart components are rendered
     expect(screen.getByText('Line')).toBeInTheDocument();
     expect(screen.getByText('X-Axis')).toBeInTheDocument();
     expect(screen.getByText('Y-Axis')).toBeInTheDocument();
@@ -66,19 +62,16 @@ describe('LineChartWithToggle Component', () => {
   it('renders correct number of points on the line chart for 12 months', () => {
     render(<LineChartWithToggle {...defaultProps} />);
 
-    // Verify that the data for 12 months is rendered correctly
     const lines = screen.getAllByText('Line');
-    expect(lines.length).toBe(1); // Since we mock the line, not individual points, we check for the line's presence
+    expect(lines.length).toBe(1); 
   });
 
   it('switches time frames when buttons are clicked', () => {
     render(<LineChartWithToggle {...defaultProps} />);
 
-    // Click on the "Last 6M" button
     const last6MButton = screen.getByText(/Last 6M/i);
     fireEvent.click(last6MButton);
 
-    // Check that setTimeFrame is called with the correct value
     expect(setTimeFrameMock).toHaveBeenCalledWith(expect.anything(), '6');
   });
 
