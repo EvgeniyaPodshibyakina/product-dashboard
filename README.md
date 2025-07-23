@@ -75,7 +75,7 @@ To start the application in development mode:
 npm run dev
 ```
 
-The application will be available at `http://localhost:5174`.
+The application will be available at `http://localhost:5173`.
 
 ## Testing
 
