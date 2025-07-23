@@ -1,50 +1,23 @@
+# 📊 Product Dashboard
 
-# açai-travel-test
+A fast, interactive dashboard built with **React**, **TypeScript**, and **Redux Toolkit**, featuring real-time charts, dynamic filters, and clean modular architecture.
 
-# Product Dashboard
+## 🔧 Technologies
 
-This project is a **Product Dashboard** application built with React, TypeScript, and Redux. The dashboard provides an overview of various product performance metrics, including sales data, conversion rates, customer reviews, and inventory status. Users can switch between different products (Sweater, Jacket, Jeans, Dress) to view specific data related to each product. The project is optimized for reusability and performance, utilizing custom hooks, memoization, modular SCSS styling, and utility functions for consistent error handling.
+- React + TypeScript
+- Redux Toolkit + RTK Query
+- Recharts for interactive charts
+- Modular SCSS
+- Vitest + MSW for testing
 
-## Project Structure
+## ✨ Highlights
 
-The project is structured as follows:
+- Dynamic product switching with data-driven interface
+- CSV report generation
+- Chart components with time frame toggles
+- Unit-tested Redux slices, API services, and components
+- Fast dev experience with Vite
 
-- **components**: Contains reusable components used across the application, including charts, inventory display, comments, and buttons.
-  - **ConversionRateOverTime**: Component displaying conversion rate trends over time.
-  - **CurrentInventory**: Component displaying current inventory status.
-  - **CustomerReviewTrend**: Component displaying customer review trends over time.
-  - **GenerateReportButton**: Component providing functionality to generate and download a CSV report.
-  - **LatestComments**: Component displaying the latest customer comments.
-  - **LineChartWithToggle**: A generic reusable component for line charts with a toggle feature for different timeframes.
-  - **ProductDataDisplay**: Component displaying all product data (Sales, Conversion, Reviews, Inventory, and Comments).
-  - **ProductSelector**: Component allowing users to select a product to view data for.
-  - **SalesOverTime**: Component displaying sales trends over time.
-
-- **hooks**: Contains custom hooks extracted from components to improve maintainability, reusability, and separation of concerns.
-  - **redux**: Contains Redux-specific hooks for dispatching and selecting from the store.
-    - **reduxHooks.ts**: Includes `useAppDispatch` and `useAppSelector` to manage Redux state efficiently.
-  - **ui**: Contains UI-specific hooks to handle UI-related logic and state management.
-    - **useTimeFrame.ts**: Manages the time frame selection logic for charts, ensuring flexibility in filtering data over different periods.
-    - **useReportData.ts**: Prepares and structures data for generating reports, including functions for CSV generation and download functionality.
-      - **types**: Includes relevant TypeScript interfaces and types for the `useReportData` hook.
-
-- **services**: Contains the RTK Query setup for data fetching and API interactions.
-  - **productApi**: Configured RTK Query API slice for fetching product data from `db.json`.
-
-- **store**: Contains the Redux store and slices for state management.
-  - **productSlice**: Redux slice for managing selected products.
-
-- **styles**: Modular SCSS files with variables for consistent color usage and theme management.
-  - **colors.scss**: A centralized file for color variables used throughout the application.
-
-- **utils**: Utility functions for common functionality across the application.
-  - **errorHandler.ts**: A utility function to standardize error handling and display consistent error messages.
-
-- **db.json**: Serves as the local data source, replacing mock data files.
-
-- **sections/ProductDashboard**: Contains the main dashboard layout, which includes the Product Selector and the Product Data Display components.
-
-- **App.tsx**: The root component that renders the Product Dashboard and integrates global state management with Redux.
 
 ## Setup and Running Instructions
 
