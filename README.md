@@ -1,3 +1,4 @@
+Test assignment completed in 2023 as part of a job application
 # 📊 Product Dashboard
 
 A fast, interactive dashboard built with **React**, **TypeScript**, and **Redux Toolkit**, featuring real-time charts, dynamic filters, and clean modular architecture.
